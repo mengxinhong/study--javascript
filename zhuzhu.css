@@ -1,0 +1,138 @@
+
+/*先把span标签变块标签*/
+#wrap span{
+    display: block;
+    width: 200px;
+    height: 200px;
+    background-color: #e1e572;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+/*给包裹器 设置动态函数 立体化*/
+#wrap{
+    width: 400px;
+    height: 400px;
+    margin: 280px auto;
+    animation: rotate 20s infinite;
+
+    /*设置在3D空间中展现 */
+    transform-style: preserve-3d;
+    animation-timing-function: linear;
+}
+
+/*设置图片大小*/
+#wrap span img{
+    width: 100%;
+    height: 100%;
+}
+
+#wrap div img{
+    width: 100%;
+    height: 100%;
+}
+
+/*第一步旋转 组装里面的立方体*/
+
+/*第一前后部分*/
+#in-qian{
+    transform: translateZ(100px);
+}
+
+#in-hou{
+    transform: translateZ(-100px);
+}
+
+#in-zuo{
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+#in-you{
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+#in-shang{
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+#in-xia{
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+/*动态函数 让画面立体化*/
+
+@keyframes rotate {
+    from{
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to{
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+/*设置外部 立方体 相关的css*/
+#wrap div{
+    width: 400px;
+    height: 400px;
+    background-color: #e70c38;
+    position: absolute;
+    transition:all 0.4s;
+}
+
+/*设置旋转角度*/
+
+#out-qian{
+    transform: translateZ(200px);
+}
+
+#out-hou{
+    transform: translateZ(-200px);
+}
+
+#out-zuo{
+    transform: rotateY(90deg) translateZ(200px);
+}
+
+#out-you{
+    transform: rotateY(-90deg) translateZ(200px);
+}
+
+#out-shang{
+    transform: rotateX(90deg) translateZ(200px);
+}
+
+#out-xia{
+    transform: rotateX(-90deg) translateZ(200px);
+}
+
+/*外部图层展开效果*/
+#wrap:hover #out-qian{
+    transform: translateZ(300px);
+}
+
+#wrap:hover #out-hou{
+    transform: translateZ(-300px);
+}
+
+#wrap:hover #out-zuo{
+    transform: rotateY(90deg) translateZ(300px);
+}
+
+#wrap:hover #out-you{
+    transform: rotateY(-90deg) translateZ(300px);
+}
+
+#wrap:hover #out-shang{
+    transform: rotateX(90deg) translateZ(300px);
+}
+
+#wrap:hover #out-xia{
+    transform: rotateX(-90deg) translateZ(300px);
+}
+body {
+    background: url("3.jpg") no-repeat 100%;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
