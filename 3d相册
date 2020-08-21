@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>3D立体相册</title>
+    <link rel="stylesheet" type="text/css" href="zhuzhu.css">
+</head>
+<body>
+<!--  第一步准备包裹器   -->
+    <div id="wrap">
+        <!--第二步，先组装内部立方体 -->
+        <span id="in-qian"><img src="1.jpg"></span>
+        <span id="in-hou"><img src="10.jpg"></span>
+        <span id="in-zuo"><img src="11.jpg"></span>
+        <span id="in-you"><img src="12.jpg"></span>
+        <span id="in-shang"><img src="13.jpg"></span>
+        <span id="in-xia"><img src="14.jpg"></span>
 
+        <!--第三步 组装外部的立方体-->
+        <div id="out-qian"><img src="2.jpg"></div>
+        <div id="out-hou"><img src="15.jpg"></div>
+        <div id="out-zuo"><img src="16.jpg"></div>
+        <div id="out-you"><img src="17.jpg"></div>
+        <div id="out-shang"><img src="18.jpg"></div>
+        <div id="out-xia"><img src="19.jpg"></div>
+        
+    </div>
+
+</body>
+</html>
